@@ -19,6 +19,37 @@ def typing(text):
         time.sleep(0.05)
     print()
 
+def tunnel_outcome(choice):
+    if choice == "1":
+        typing("\nYou step into the left tunnel. It's damp and smells of moss.")
+        s_p()
+        typing("Suddenly the loud sound of moving stone plates penetrate your ears...")
+        typing("The floor beneath you gives away!")
+        s_p()
+        typing("You fall into a pit of spikes and get impaled...")
+        return "death"
+    elif choice == "2":
+        typing("\nYou venture into the right tunnel. It's dark but manageable because of your torch.")
+        typing("\nYou use it to burn down the cobwebs...")
+        s_p()
+        typing("\nSuddenly you hear multiple screeching sounds...")
+        s_p()
+        typing("\nThe screeching comes from many spiders coming from the holes out of the walls... crawling towards you!")
+        s_p()
+        typing("\nYou run right through the many cobwebs, just hoping to flee from the spiders")
+        s_p()
+        typing("\nYour foot trips over a stone and you fall... just to realise you have escaped the spiders!")
+        s_p()
+        typing("\nLooking up you see a room, the room you were looking for.")
+        typing("\nYou have found the idol!")
+        s_p()
+        return "success"
+    else:
+        typing("Confused, you stand still until a bat flies into your face.")
+        typing("You stumble and hit your head. Unfortunate way to go.")
+        return "death"
+
+
 
 # --- Main Adventure Function ---
 
@@ -48,24 +79,24 @@ def main():
 /_/   \\_\\__,_| \\_/ \\___|_| |_|\\__|\\__,_|_|  \\___|
 """)
 
+
+
     s_p()
     typing("\"Welcome to the Minigame!\"")
-    s_p()
-    print("\n\"This is not gonna be some cliche adventure. It'll be unique for sure!\"")
-    s_p()
-    print("\n\"So let me think of something...\"")
+    typing("\n\"This is not gonna be some cliche adventure. It'll be unique for sure!\"")
+    typing("\n\"So let me think of something...\"")
     m_p()
-    print("\n\"Wait a second my god!\"")
+    typing("\n\"Wait a second my god!\"")
     s_p()
-    print("\n\"You're probably one of these TikTok kiddies. I can tell from your attention span.\"")
+    typing("\n\"You're probably one of these TikTok kiddies. I can tell from your attention span.\"")
     m_p()
-    print("\n\"Wait! I almost got it...\"")
+    typing("\n\"Wait! I almost got it...\"")
     m_p()
-    print("\n\"Oh haha, yeah I know a great, non cliche start to this adventure!\"")
+    typing("\n\"Oh haha, yeah I know a great, non cliche start to this adventure!\"")
     s_p()
-    print("\n\"Here we go!\"\n")
+    typing("\n\"Here we go!\"\n")
 
-    time.sleep(3)
+    s_p()
     print("""
 You awaken in a dark forest. The trees whisper in the wind.
 Two paths lie before you...
@@ -95,29 +126,30 @@ Two paths lie before you...
 
     print("\n")
     time.sleep(5)
-    print("\"Yeah... okay. I have to admit this story isn't very original.\"")
+    typing("\"Yeah... okay. I have to admit this story isn't very original.\"")
     time.sleep(3)
-    print("\"I'll just do some Indiana Jones type shit... at least that's fun\"")
+    typing("\"I'll just do some Indiana Jones type shit... at least that's fun\"")
 
     m_p()
-    print("\nYou are an adventurer and fight your way through a forest. Eventually, after days of searching, you find something. An entrance to a cave. The dark, long tunnel just begs to be discovered.\nWhat will you do?")
+    print("\nYou are an adventurer and fight your way through a forest. Eventually, after days of searching, you find something.\nAn entrance to a cave. The dark, long tunnel just begs to be discovered.\nWhat will you do?")
     m_p()
     choice = input("Do you dare to enter the cave (1) or will you just turn around and leave (2)? ")
 
     if choice == "1":
-        time.sleep(3)
+        s_p()
         print("\nYou take the first step towards the cave entrance and light a torch to see what's in front of you. Your curiosity has won and you disappear into the darkness")
         m_p()
-        print("""_______
+        print(r"""
+               _______
             .-'       '-.
           .'             '.
-         /   _________     \\
-        /   /         \\     \\
+         /   _________     \
+        /   /         \\    \
        |   |           |     |
        |   |           |     |
        |   |           |     |
-        \\  \\_________/    /
-         \\             _.-'
+        \  \\_________/    /
+         \             _.-'
           '._       _.-'
              '-._.-'
 
@@ -126,10 +158,10 @@ Two paths lie before you...
      /   \\
      """)
     elif choice == "2":
-        time.sleep(3)
+        s_p()
         print("\nYou turn around and leave like you haven't spent the last few days searching for this. That's just kind of embarrassing.")
-        time.sleep(3)
-        print("""
+        s_p()
+        print(r"""
         \_____/
             ( >_< )
            =\(   )>
@@ -142,7 +174,7 @@ Two paths lie before you...
     m_p()
     print("A few dozens of meters into the cave you find some ancient signs on the walls! Exactly what you were looking for.")
     m_p()
-    print("""             ______
+    print(r"""             ______
              |  o o |              ______
             /    -  (\            |  o o |
            / /)   (\ \\          /    -  (\
@@ -170,13 +202,14 @@ Two paths lie before you...
               \\ \)   (/ /        \\ \\ (/ | | |
                \)  -    /          \\ \)   (/ /
                 |_o_o__|            \)  -    /
-                                     |_o_o__|""")
-    time.sleep(6)
+                                     |_o_o__|
+                                     """)
+    m_p()
     print("\nAfter some riddling, the signs turn out to be a map of the cave leading to the hidden temple!")
-    time.sleep(6)
+    m_p()
     print("\nA few minutes later, you're faced with a mysterious hallway")
-    time.sleep(4)
-    print("""
+    m_p()
+    print(r"""
  _____________________________________________
 |.'',                                     ,''.|
 |.'.'',                                 ,''.'.|
@@ -198,37 +231,20 @@ Two paths lie before you...
 |.','          /%%%%%%%%%%%%%%%\          ','.|
 |;____________/%%%%%%%%%%%%%%%%%\____________;|
 """)
-    time.sleep(6)
+    m_p()
     print("But now you have to decide in which direction you want to head.\nTo the left it seems like there is light shimmering from around the corner.\nTo the right there is another dark tunnel and a whole lot of cobwebs, with no spiders in them (hopefully)...")
 
-    time.sleep(10)
+    l_p()
     choice = input("So which tunnel do you want to head in? Left (1) or right (2)? ")
 
-    if choice == "1":
-        print("Full with courage you head into the left tunnel!")
-        time.sleep(4)
-        print("\nAs the light seems to come closer, you step onto a brick plate...")
-        time.sleep(4)
-        print("\nThe ground underneath you begins to move and a gap forms under your feet!")
-        time.sleep(4)
-        print("\nYou fall down the hole and... get impaled by many up-facing spears!")
+    outcome = tunnel_outcome(choice)
+
+    if outcome == "death":
+        typing("Your adventure ends here... better luck next time!")
         return
-    elif choice == "2":
-        print("Full of courage you head into the right tunnel!")
-        time.sleep(4)
-        print("\nYou use the torch to burn down the cobwebs...")
-        time.sleep(4)
-        print("\nSuddenly you hear multiple screeching sounds...")
-        time.sleep(4)
-        print("\nThe screeching comes from many spiders crawling towards you!")
-        time.sleep(4)
-        print("\nYou run through the cobwebs and escape!")
-        time.sleep(4)
-        print("\nLooking up you see a room, the one you were looking for.")
-        time.sleep(4)
-        print("\nThe golden Idol stands on a table in the middle of the room")
-        time.sleep(7)
-        print(""" @#@@%@@@#@#@@+
+
+    m_p()
+    print(r""" @#@@%@@@#@#@@+
                                        @@@@  *        @  @@@@
                                     @@ *.  .:=*@@@%@%*#*+.  #@@@
                                   ==     .-*%* .       :#@@*.   @*
@@ -278,17 +294,21 @@ Two paths lie before you...
                                @@  *@@  %%@  @   @   @ @ - =@@  #@
                                @*: -:  @@ @ @@ @ @ @ @. @%#     +@
                                 .@@:  @+#@   @  # @  @  @ @  #@@@
-                                   @@@@@@@@@@@@@@@@@@@@@@@@@@@""")  # Replace with your ASCII art
-        time.sleep(7)
-        print(r"""
+                                   @@@@@@@@@@@@@@@@@@@@@@@@@@@""")
+    m_p()
+
+    print("\nYou grab it from a little pedestal and feel the weight in your hand.")
+    print("The golden Idol shimmers and it feels rewarding!")
+    print("Congratulations, brave adventurer. Your journey ends in glory!")
+    m_p()
+
+    print(r"""
 __   __                                _
 \ \ / /__  _   _  __      _____  _ __ | |
  \ V / _ \| | | | \ \ /\ / / _ \| '_ \| |
   | | (_) | |_| |  \ V  V / (_) | | | |_|
   |_|\___/ \__,_|   \_/\_/ \___/|_| |_(_)
 """)
-    else:
-        print("You must choose 1 or 2 to proceed on your adventure!")
 
 # --- Run the game ---
 if __name__ == "__main__":
