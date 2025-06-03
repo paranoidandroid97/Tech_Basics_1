@@ -10,7 +10,7 @@ screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Animated Image Objects")
 
 # Load and scale image (adjust the path if needed)
-image = pygame.image.load("ea85a121-e08d-4736-b142-d0ac451b9eeb.png")
+image = pygame.image.load("radiohead-bear.jpg")
 image = pygame.transform.scale(image, (80, 80))
 
 # ImageObject class
